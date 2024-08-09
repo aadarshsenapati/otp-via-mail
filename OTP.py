@@ -1,4 +1,4 @@
-#yqcn cbbg wdqg egor
+# yqcn cbbg wdqg egor
 import smtplib
 import maskpass
 smtp_object = smtplib.SMTP('smtp.gmail.com',587)
@@ -15,3 +15,10 @@ number = random.randint(1111, 9999)
 text="Your OTP is: "
 msg = f"Subject: {subject}\n\n{text}{number}"
 smtp_object.sendmail(from_e,to_e,msg)
+
+
+print("Enter the password: ")
+li=maskpass.askpass(mask="*")
+li=int(li)
+if(li==number):
+    print("Login suceessful!")

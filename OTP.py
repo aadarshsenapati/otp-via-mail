@@ -1,4 +1,3 @@
-# yqcn cbbg wdqg egor
 import smtplib
 import maskpass
 smtp_object = smtplib.SMTP('smtp.gmail.com',587)

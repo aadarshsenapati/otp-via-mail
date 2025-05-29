@@ -60,3 +60,55 @@ Copy the `src` folder and paste it in your project folder.
 Execute the `OTP.php` for this repository.
 
 ---
+
+## **C++**
+
+---
+
+### **Requirements:**
+
+- C++17 or later  
+- [`libcurl`](https://curl.se/libcurl/) installed (can be installed via [vcpkg](https://github.com/microsoft/vcpkg))  
+- Access to an SMTP mail server (e.g., Gmail SMTP)  
+- Internet connection  
+- CMake (recommended for building the project)  
+
+---
+
+### **Description:**
+
+This C++ program uses `libcurl` to send a secure, SMTP-authenticated email containing a randomly generated 6-digit OTP to the user's email address. The OTP is stored in a local variable (can be extended to file or DB for validation). The email includes a plain text message and is sent via an SMTP server (e.g., Gmail, Outlook). The program is modular, using a custom `EmailSender` class to encapsulate email-sending logic. SMTP credentials must be provided correctly, and `libcurl` must be linked properly for successful delivery.
+
+---
+
+### **Usage:**
+
+1. **Install libcurl using vcpkg:**
+   ```bash
+   vcpkg install curl
+   ```
+2. **Create the project folder structure:**
+   ```sql
+   EmailSenderCPP/
+    ├── CMakeLists.txt
+    ├── main.cpp
+    ├── include/
+    │   └── EmailSender.h
+    ├── src/
+    │   └── EmailSender.cpp
+    └── vcpkg/ (optional if using local clone)
+    ```
+3. **Configure SMTP settings in EmailSender.cpp with your SMTP host, username, and password.**
+4. **Build and run the project using CMake:**
+   ```bash
+   mkdir build
+    cd build
+    cmake .. -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake
+    cmake --build .
+    ./EmailSenderCPP
+    ```
+### **Note:**
+- Install and configure vcpkg if not already available.
+- Use Gmail's App Passwords or another provider’s SMTP credentials.
+- For Gmail, make sure "Allow less secure apps" or App Password is enabled for sending mail.
+- Customize the OTP logic or store it as needed for your use case.

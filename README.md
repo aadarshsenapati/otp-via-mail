@@ -1,3 +1,4 @@
+**Python**
 --------------------------------------------------------------------------------------
 Requirements:
 -------------------------------------------------------------------------------------- 
@@ -17,3 +18,7 @@ Usage:
 Run the Script: Execute the script in a Python environment.
 Enter Email Details: Input your email, app-specific password, and the recipient's email when prompted.
 Receive OTP: The recipient will receive an email with the OTP.
+
+<br><br>
+<br><br>
+**PhP**
